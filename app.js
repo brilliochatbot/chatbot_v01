@@ -20,5 +20,10 @@ server.post('/api/messages', connector.listen());
 
 // Receive messages from the user and respond by echoing each message back (prefixed with 'You said:')
 var bot = new builder.UniversalBot(connector, function (session) {
+	if (session.message.text.includes("hella"))
+	{
+	session.send("Brillio product");
+	}
+	
     session.send("You said: %s", session.message.text);
 });
