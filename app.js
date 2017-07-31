@@ -22,7 +22,7 @@ server.post('/api/messages', connector.listen());
 var bot = new builder.UniversalBot(connector, function (session) {
 	if (session.message.text.includes("hella"))
 	{
-	session.send("Brillio product");
+	session.send('Brillio product\n	Brillio creates innovative digital experiences for your customers. We use advanced digital engineering to ensure these experiences run smoothly.\n And we enable customer-facing and operational insights with the power of big data analytics.');
 	}
 	else if (session.message.text.includes("how r u"))
 	{
@@ -30,7 +30,7 @@ var bot = new builder.UniversalBot(connector, function (session) {
 	}
 	else if (session.message.text.includes("hi"))
 	{
-	session.send("Hi\nHow can i help you");
+	session.send('Hi \n How can i help you');
 	}
 	else
 	{
