@@ -24,6 +24,14 @@ var bot = new builder.UniversalBot(connector, function (session) {
 	{
 	session.send("Brillio product");
 	}
+	else if (session.message.text.includes("how r u"))
+	{
+	session.send("I am doing good; How r u");
+	}
+	else if (session.message.text.includes("hi"))
+	{
+	session.send("Hi\nHow can i help you");
+	}
 	else
 	{
     session.send("You said: %s", session.message.text);
