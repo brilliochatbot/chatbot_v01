@@ -26,11 +26,11 @@ var bot = new builder.UniversalBot(connector, function (session) {
 	}
 	else if (session.message.text.includes("how r u"))
 	{
-	session.send("I am doing good; How r u");
+	session.send("I am doing good\n\nHow r u");
 	}
 	else if (session.message.text.includes("hi"))
 	{
-	session.send('Hi \n How can i help you');
+	session.send('Hi \n\n How can i help you');
 	}
 	else
 	{
