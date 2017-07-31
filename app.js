@@ -24,6 +24,8 @@ var bot = new builder.UniversalBot(connector, function (session) {
 	{
 	session.send("Brillio product");
 	}
-	
+	else
+	{
     session.send("You said: %s", session.message.text);
+	}
 });
