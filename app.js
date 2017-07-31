@@ -32,6 +32,10 @@ var bot = new builder.UniversalBot(connector, function (session) {
 	{
 	session.send('Hi \n\n How can i help you');
 	}
+	else if (session.message.text.includes("happy"))
+	{
+	session.send('Good to see you happy');
+	}
 	else
 	{
     session.send("You said: %s", session.message.text);
