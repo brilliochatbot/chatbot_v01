@@ -36,10 +36,10 @@ var bot = new builder.UniversalBot(connector, function (session) {
 	{
 	session.send('Good to see you happy');
 	}
-	else
-	{
-    session.send("You said: %s", session.message.text);
-	}
+	//else
+	//{
+    //session.send("You said: %s", session.message.text);
+	//}
 });
 
 var LUIS_MODEL_URL='https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/8469e743-3cf0-4c53-9b2c-67e13b9326b2?subscription-key=2a4eb0bdf86042eb9138c85fd724dd6c&timezoneOffset=0&verbose=true&q='
