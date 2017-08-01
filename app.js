@@ -59,6 +59,9 @@ var intents = new builder.IntentDialog({recognizers:[recognizer]})
 .matches('None',(session, args)=>{
  session.send('Hi this is the none intent you said: \'%s\'.',session.message.text)
 })
+.matches('weather',(session, args)=>{
+ session.send('you asked for weather')
+})
 
 bot.dialog('SearchHotels', [
     function (session, args, next) {
