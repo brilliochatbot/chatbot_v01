@@ -19,7 +19,10 @@ var connector = new builder.ChatConnector({
 server.post('/api/messages', connector.listen());
 
 // Receive messages from the user and respond by echoing each message back (prefixed with 'You said:')
-/*var bot = new builder.UniversalBot(connector, function (session) {
+
+/*var bot = new builder.UniversalBot(connector, function (session) 
+
+{
 	if (session.message.text.includes("hella"))
 	{
 	session.send('Brillio product \n\n Brillio creates innovative digital experiences for your customers. We use advanced digital engineering to ensure these experiences run smoothly.\n\n And we enable customer-facing and operational insights with the power of big data analytics.');
@@ -41,6 +44,10 @@ server.post('/api/messages', connector.listen());
     //session.send("You said: %s", session.message.text);
 	//}
 });*/
+
+var bot = new builder.UniversalBot(connector, function (session) {
+    session.send('Sorry, I did not understand \'%s\'. Type \'help\' if you need assistance.', session.message.text);
+});
 
 var LUIS_MODEL_URL='https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/8469e743-3cf0-4c53-9b2c-67e13b9326b2?subscription-key=2a4eb0bdf86042eb9138c85fd724dd6c&timezoneOffset=0&verbose=true&q='
 
