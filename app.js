@@ -55,6 +55,10 @@ var LUIS_MODEL_URL='https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/84
 
 var recognizer = new builder.LuisRecognizer(LUIS_MODEL_URL);
 bot.recognizer(recognizer);
+var intents = new builder.IntentDialog({recognizers:[recognizer]})
+.matches('None',(session, args)=>{
+ session.send('Hi this is the none intent you said: \'%s\'.',session.message.text)
+})
 
 bot.dialog('SearchHotels', [
     function (session, args, next) {
