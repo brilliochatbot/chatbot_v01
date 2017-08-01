@@ -63,6 +63,14 @@ var intents = new builder.IntentDialog({recognizers:[recognizer]})
  session.send('you asked for weather')
 })
 
+bot.dialog('weather', [
+  function(session,args,next){
+  session.send('Welcome to the Hotels finder! We are analyzing your message: \'%s\'', session.message.text);
+  }
+  ]).triggerAction({
+    matches: 'weather'
+});
+
 bot.dialog('SearchHotels', [
     function (session, args, next) {
         session.send('Welcome to the Hotels finder! We are analyzing your message: \'%s\'', session.message.text);
