@@ -74,7 +74,8 @@ bot.dialog('weather1', [
 
 bot.dialog('greeting', [
   function(session,args,next){
-  if (session.message.text.includes("Hi"))
+  session.send('Hey Brillio  \n\n\nI am your smart auto assistant powered by Hella. Help me with your car details so that I can do a lot better for you. Which Lexus auto do you own? 11');
+  if (session.message.text.includes("hi"))
   {
   session.send('Hey Brillio  \n\n\nI am your smart auto assistant powered by Hella. Help me with your car details so that I can do a lot better for you. Which Lexus auto do you own? ');
   }
