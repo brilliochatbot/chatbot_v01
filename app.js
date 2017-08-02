@@ -190,51 +190,6 @@ function reviewAsAttachment(review) {
         .images([new builder.CardImage().url(review.image)]);
 }
 
-/** Fetch the weather forecast for a city */
-bot.dialog('GetForecast', [
-  function(session, args, next) {
-    const location = builder.EntityRecognizer.findEntity(args.entities, 'builtin.geography.city');
-    const timeperiod = builder.EntityRecognizer.findEntity(args.entities, 'builtin.datetime.date');
-
-    if (!location) {
-      builder.Prompts.text(session, 'Where?');
-    } else {
-      next({
-        location: location.entity,
-        timeperiod: timeperiod
-      });
-    }
-  },
-  function(session, results) {
-    const loc = results.location;
-
-    weatherForecast(loc, (err, data) => {
-      const res = data.results.channel.item.forecast;
-
-      if (!results.timeperiod) {
-
-        res.forEach((item) => {
-          var message = item.day + ': ' + item.text + ' with a high of ' + item.high + ' and a low of ' + item.low;
-          session.send(message);
-        });
-
-      } else {
-
-        var forecastdate = moment(results.timeperiod.resolution.date, 'YYYY-MM-DD');
-        var forecast = forecastForADate(forecastdate, res);
-
-        if (forecast) {
-          var msg = forecast.day + ': ' + forecast.text + ' with a high of ' + forecast.high + ' and a low of ' + forecast.low;
-          session.send(msg);
-        } else {
-          var msg = "Whoops, forecast not available yet!";
-          session.send(msg);
-        }
-      }
-    });
-  }
-]);
-
 
 
 /*********************************************
