@@ -66,7 +66,7 @@ var intents = new builder.IntentDialog({recognizers:[recognizer]})
 
 bot.dialog('weather', [
   function(session,args,next){
-  session.send('Welcome to the Hotels finder! We are analyzing your message: \'%s\'', session.message.text);
+  session.send('Welcome to the Weather finder! We are analyzing your message: \'%s\'', session.message.text);
   }
   ]).triggerAction({
     matches: 'weather'
@@ -220,7 +220,7 @@ function forecastForADate(forecastDate, forecasts) {
 }
 
 /** Prompts to get the current weather conditions */
-bot.dialog('weather', [
+bot.dialog('Weather.GetForecast', [
   function(session, args, next) {
 	session.send('Welcome to the Weather finder! We are analyzing your message: \'%s\'', session.message.text);
     const location = builder.EntityRecognizer.findEntity(args.entities, 'builtin.geography.city');
