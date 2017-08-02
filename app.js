@@ -64,7 +64,7 @@ var intents = new builder.IntentDialog({recognizers:[recognizer]})
  session.send('you asked for weather')
 })
 
-bot.dialog('weather', [
+bot.dialog('weather1', [
   function(session,args,next){
   session.send('Welcome to the Weather finder! We are analyzing your message: \'%s\'', session.message.text);
   }
@@ -240,8 +240,15 @@ bot.dialog('Weather.GetForecast', [
       var res = data.results.channel.item.condition;
       session.send(res.text + ' with a temperature of ' + res.temp + ' degress');
     });
-  }
-]);
+  } /////////////////////////////
+]).triggerAction({
+    matches: 'SearchHotels',
+    onInterrupted: function (session) {
+        session.send('Please provide a destination');
+    }
+});
+
+
 
 /** Fetch the weather forecast for a city */
 bot.dialog('GetForecast', [
