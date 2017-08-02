@@ -72,6 +72,21 @@ bot.dialog('weather1', [
     matches: 'weather'
 });
 
+bot.dialog('greeting', [
+  function(session,args,next){
+  if (session.message.text.includes("Hi"))
+  {
+  session.send('Hey Brillio  \n\n\nI am your smart auto assistant powered by Hella. Help me with your car details so that I can do a lot better for you. Which Lexus auto do you own? ');
+  }
+  //session.send('Welcome to the Weather finder! We are //analyzing your message: \'%s\'', session.message.text);
+  }
+  ]).triggerAction({
+    matches: 'greeting'
+});
+
+
+
+
 bot.dialog('SearchHotels', [
     function (session, args, next) {
         session.send('Welcome to the Hotels finder! We are analyzing your message: \'%s\'', session.message.text);
