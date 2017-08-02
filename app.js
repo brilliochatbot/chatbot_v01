@@ -220,7 +220,7 @@ function forecastForADate(forecastDate, forecasts) {
 }
 
 /** Prompts to get the current weather conditions */
-bot.dialog('GetCurrentWeather', [
+bot.dialog('Weather.GetForecast', [
   function(session, args, next) {
 	session.send('Welcome to the Weather finder! We are analyzing your message: \'%s\'', session.message.text);
     const location = builder.EntityRecognizer.findEntity(args.entities, 'builtin.geography.city');
