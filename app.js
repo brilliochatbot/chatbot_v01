@@ -242,7 +242,7 @@ bot.dialog('Weather.GetForecast', [
     });
   } /////////////////////////////
 ]).triggerAction({
-    matches: 'SearchHotels',
+    matches: 'Weather.GetForecast',
     onInterrupted: function (session) {
         session.send('Please provide a destination');
     }
@@ -293,4 +293,9 @@ bot.dialog('GetForecast', [
       }
     });
   }
-]);
+]).triggerAction({
+    matches: 'GetForecast',
+    onInterrupted: function (session) {
+        session.send('Please provide a GetForecast');
+    }
+});
