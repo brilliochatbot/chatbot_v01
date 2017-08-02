@@ -51,7 +51,7 @@ var bot = new builder.UniversalBot(connector, function (session) {
 
 //var bot = new builder.UniversalBot(connector);
 
-var LUIS_MODEL_URL='https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/8469e743-3cf0-4c53-9b2c-67e13b9326b2?subscription-key=2a4eb0bdf86042eb9138c85fd724dd6c&timezoneOffset=0&verbose=true'
+var LUIS_MODEL_URL='https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/8469e743-3cf0-4c53-9b2c-67e13b9326b2?subscription-key=2a4eb0bdf86042eb9138c85fd724dd6c&timezoneOffset=0&verbose=true&q='
 
 var recognizer = new builder.LuisRecognizer(LUIS_MODEL_URL);
 bot.recognizer(recognizer);
