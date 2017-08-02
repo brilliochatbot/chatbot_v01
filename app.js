@@ -72,18 +72,18 @@ bot.dialog('weather', [
     matches: 'weather'
 });
 
-/*bot.dialog('greeting', [
+  bot.dialog('greeting', [
   function(session,args,next){
   session.send('Hey Brillio  \n\n\nI am your smart auto assistant powered by Hella. Help me with your car details so that I can do a lot better for you. Which Lexus auto do you own? 11');
-  if (session.message.text.includes("hi"))
+  /*if (session.message.text.includes("hi"))
   {
   session.send('Hey Brillio  \n\n\nI am your smart auto assistant powered by Hella. Help me with your car details so that I can do a lot better for you. Which Lexus auto do you own? ');
   }
-  //session.send('Welcome to the Weather finder! We are //analyzing your message: \'%s\'', session.message.text);
+  //session.send('Welcome to the Weather finder! We are //analyzing your message: \'%s\'', session.message.text);*/
   }
   ]).triggerAction({
     matches: 'greeting'
-});*/
+});
 
 
 
@@ -260,7 +260,7 @@ bot.dialog('Weather.GetForecast', [
 ]).triggerAction({
     matches: 'Weather.GetForecast',
     onInterrupted: function (session) {
-        session.send('Please provide a destination');
+        session.send('Please provide a weather destination');
     }
 });
 
