@@ -64,17 +64,17 @@ var intents = new builder.IntentDialog({recognizers:[recognizer]})
  session.send('you asked for weather')
 })
 
-bot.dialog('weather', [
+/*bot.dialog('weather', [
   function(session,args,next){
   session.send('Welcome to the Weather finder! We are analyzing your message: \'%s\'', session.message.text);
   }
   ]).triggerAction({
     matches: 'weather'
-});
+});*/
 
   bot.dialog('greeting', [
   function(session,args,next){
-  session.send('Hey Brillio  \n\n\nI am your smart auto assistant powered by Hella. Help me with your car details so that I can do a lot better for you. Which Lexus auto do you own? 11');
+  session.send('Hey Brillio  \n\n\nI am your smart auto assistant powered by Hella. Help me with your car details so that I can do a lot better for you. Which Lexus auto do you own?');
   /*if (session.message.text.includes("hi"))
   {
   session.send('Hey Brillio  \n\n\nI am your smart auto assistant powered by Hella. Help me with your car details so that I can do a lot better for you. Which Lexus auto do you own? ');
