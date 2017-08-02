@@ -77,16 +77,16 @@ bot.dialog('SearchHotels', [
 
         // try extracting entities
         var cityEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'builtin.geography.city');
-        var airportEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'AirportCode');
+        //var airportEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'AirportCode');
         if (cityEntity) {
             // city entity detected, continue to next step
             session.dialogData.searchType = 'city';
             next({ response: cityEntity.entity });
-        } else if (airportEntity) {
+        } /*else if (airportEntity) {
             // airport entity detected, continue to next step
             session.dialogData.searchType = 'airport';
             next({ response: airportEntity.entity });
-        } else {
+        }*/ else {
             // no entities detected, ask user for a destination
             builder.Prompts.text(session, 'Please enter your destination');
         }
@@ -188,3 +188,48 @@ function reviewAsAttachment(review) {
         .text(review.text)
         .images([new builder.CardImage().url(review.image)]);
 }
+
+/** Fetch the weather forecast for a city */
+bot.dialog('GetForecast', [
+  function(session, args, next) {
+    const location = builder.EntityRecognizer.findEntity(args.entities, 'builtin.geography.city');
+    const timeperiod = builder.EntityRecognizer.findEntity(args.entities, 'builtin.datetime.date');
+
+    if (!location) {
+      builder.Prompts.text(session, 'Where?');
+    } else {
+      next({
+        location: location.entity,
+        timeperiod: timeperiod
+      });
+    }
+  },
+  function(session, results) {
+    const loc = results.location;
+
+    weatherForecast(loc, (err, data) => {
+      const res = data.results.channel.item.forecast;
+
+      if (!results.timeperiod) {
+
+        res.forEach((item) => {
+          var message = item.day + ': ' + item.text + ' with a high of ' + item.high + ' and a low of ' + item.low;
+          session.send(message);
+        });
+
+      } else {
+
+        var forecastdate = moment(results.timeperiod.resolution.date, 'YYYY-MM-DD');
+        var forecast = forecastForADate(forecastdate, res);
+
+        if (forecast) {
+          var msg = forecast.day + ': ' + forecast.text + ' with a high of ' + forecast.high + ' and a low of ' + forecast.low;
+          session.send(msg);
+        } else {
+          var msg = "Whoops, forecast not available yet!";
+          session.send(msg);
+        }
+      }
+    });
+  }
+]);
