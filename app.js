@@ -258,12 +258,15 @@ bot.dialog('Weather.GetForecast', [
     });
   } /////////////////////////////
 ]).triggerAction({
+    matches: 'Weather.GetForecast'
+ });
+
+/*]).triggerAction({
     matches: 'Weather.GetForecast',
     onInterrupted: function (session) {
         session.send('Please provide a weather destination');
     }
-});
-
+});*/
 
 
 /** Fetch the weather forecast for a city */
