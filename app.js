@@ -93,7 +93,7 @@ bot.dialog('car', [
   
   //if(modelEntity)
   
-  if (modelEntity.toLowerCase() === 'es hybrid' || modelEntity.toLowerCase() === 'lx' || modelEntity.toLowerCase() === 'rc f')
+  if (modelEntity === 'Lexus' )
   {
   builder.Prompts.text(session, 'Let me know your car number');
   }
