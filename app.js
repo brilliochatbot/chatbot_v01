@@ -91,14 +91,14 @@ bot.dialog('car', [
   
   var modelEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'model');
   
-  //if (modelEntity === 'es hybrid' || modelEntity === 'lx' || modelEntity === 'rc f')
-  if (modelEntity)
-  {
+  if (modelEntity.toLowerCase() == 'es hybrid' || modelEntity.toLowerCase() == 'lx' || modelEntity.toLowerCase() == 'rc f')
   
+  {
   builder.Prompts.text(session, 'Let me know your car number');
   }
   else
   {
+  //user
   session.send('model %s', modelEntity)
   //builder.Prompts.text(session,modelEntity);
   builder.Prompts.text(session, 'please enter Lexus ES Hybrid/ Lexus LX/ Lexus RC F');
