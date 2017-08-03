@@ -93,7 +93,7 @@ bot.dialog('car', [
   
   //if(modelEntity)
   
-  if (modelEntity === 'Lexus' )
+  if (modelEntity === 'Lexus' ||  modelEntity === 'lexus')
   {
   builder.Prompts.text(session, 'Let me know your car number');
   }
