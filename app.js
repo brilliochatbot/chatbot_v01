@@ -91,7 +91,7 @@ bot.dialog('car', [
   
   var modelEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'model');
   
-  if (modelEntity === 'Lexus ES Hybrid' || modelEntity === 'Lexus LX' || modelEntity === 'Lexus RC F')
+  if (modelEntity === 'es hybrid' || modelEntity === 'lx' || modelEntity === 'rc f')
   {
   
   builder.Prompts.text(session, 'Let me know your car number');
