@@ -124,7 +124,7 @@ bot.dialog('carregistered', [
   
   //if (modelEntity === 'Lexus' ||  modelEntity === 'lexus')
 	{
-	//session.send('model %s', args[0])
+	session.send('model %d %s', carnumberEntity, carnumberEntity)
 	builder.Prompts.text(session, 'Fine. How can I help you today?');
 	}
 	else
