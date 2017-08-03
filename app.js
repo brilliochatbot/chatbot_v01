@@ -94,18 +94,18 @@ bot.dialog('car', [
   if(modelEntity)
   
   //if (modelEntity === 'Lexus' ||  modelEntity === 'lexus')
-  {
-  session.send('model %s', args[0])
-  builder.Prompts.text(session, 'Let me know your car number');
-  }
-  else
-  {
-  //user
-  session.send('model %s', args[0])
-  //session.send('model %s', modelEntity)
-  //builder.Prompts.text(session,modelEntity);
-  builder.Prompts.text(session, 'please enter Lexus ES Hybrid/ Lexus LX/ Lexus RC F');
-  }
+	{
+	//session.send('model %s', args[0])
+	builder.Prompts.text(session, 'Let me know your car number');
+	}
+	else
+	{
+	  //user
+	  //session.send('model %s', args[0])
+	  //session.send('model %s', modelEntity)
+	  //builder.Prompts.text(session,modelEntity);
+	builder.Prompts.text(session, 'please enter Lexus ES Hybrid/ Lexus LX/ Lexus RC F');
+	}
   
   
   //session.send('Let me know your car number');
@@ -114,6 +114,34 @@ bot.dialog('car', [
     matches: 'car'
 });
 
+
+bot.dialog('carregistered', [
+  function(session,args,next){
+  
+  var carnumberEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'carnumber');
+  
+  if(carnumberEntity)
+  
+  //if (modelEntity === 'Lexus' ||  modelEntity === 'lexus')
+	{
+	//session.send('model %s', args[0])
+	builder.Prompts.text(session, 'Fine. How can I help you today?');
+	}
+	else
+	{
+	  //user
+	  //session.send('model %s', args[0])
+	  //session.send('model %s', modelEntity)
+	  //builder.Prompts.text(session,modelEntity);
+	builder.Prompts.text(session, 'please enter valid car number');
+	}
+  
+  
+  //session.send('Let me know your car number');
+  }
+  ]).triggerAction({
+    matches: 'carregistered'
+});
 
 
 bot.dialog('SearchHotels', [
