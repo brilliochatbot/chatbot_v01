@@ -144,8 +144,7 @@ bot.dialog('carregistered', [
     matches: 'carregistered',
 	//onInterrupted: function (session) {
     //    session.send('Please provide a valid car number');
-    }
-});
+  });
 
 
 
