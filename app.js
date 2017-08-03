@@ -95,13 +95,13 @@ bot.dialog('car', [
   
   //if (modelEntity === 'Lexus' ||  modelEntity === 'lexus')
   {
-  session.send('model %s', args)
+  session.send('model %s', args(0))
   builder.Prompts.text(session, 'Let me know your car number');
   }
   else
   {
   //user
-  session.send('model %s', args)
+  session.send('model %s', args[0])
   //session.send('model %s', modelEntity)
   //builder.Prompts.text(session,modelEntity);
   builder.Prompts.text(session, 'please enter Lexus ES Hybrid/ Lexus LX/ Lexus RC F');
