@@ -145,7 +145,7 @@ bot.dialog('carregistered', [
 	onInterrupted: function (session) {
         session.send('Please provide a valid car number');
     }
-});
+}).begin({session});
 
 
 
