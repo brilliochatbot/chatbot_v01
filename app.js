@@ -148,6 +148,8 @@ bot.dialog('carregistered', [
 });
 
 
+
+
 bot.dialog('SearchHotels', [
     function (session, args, next) {
         session.send('Welcome to the Hotels finder! We are analyzing your message: \'%s\'', session.message.text);
