@@ -142,10 +142,10 @@ bot.dialog('carregistered', [
   }
   ]).triggerAction({
     matches: 'carregistered',
-	onInterrupted: function (session) {
-        session.send('Please provide a valid car number');
+	//onInterrupted: function (session) {
+    //    session.send('Please provide a valid car number');
     }
-}).begin({session});
+});
 
 
 
