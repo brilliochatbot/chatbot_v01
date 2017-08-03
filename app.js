@@ -88,7 +88,20 @@ var intents = new builder.IntentDialog({recognizers:[recognizer]})
 
 bot.dialog('car', [
   function(session,args,next){
-  session.send('Let me know your car number');
+  
+  var modelEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'model');
+  
+  if (modelEntity)
+  {
+  builder.Prompts.text(session, 'Let me know your car number');
+  }
+  else
+  {
+  builder.Prompts.text(session, 'please enter Lexus ES Hybrid/ Lexus LX/ Lexus RC F');
+  }
+  
+  
+  //session.send('Let me know your car number');
   }
   ]).triggerAction({
     matches: 'car'
