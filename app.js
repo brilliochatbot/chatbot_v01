@@ -98,6 +98,7 @@ bot.dialog('car', [
   }
   else
   {
+  builder.Prompts.text(session,modelEntity);
   builder.Prompts.text(session, 'please enter Lexus ES Hybrid/ Lexus LX/ Lexus RC F');
   }
   
