@@ -86,6 +86,14 @@ var intents = new builder.IntentDialog({recognizers:[recognizer]})
 });
 
 
+bot.dialog('car', [
+  function(session,args,next){
+  session.send('Let me know your car number');
+  }
+  ]).triggerAction({
+    matches: 'car'
+});
+
 
 
 bot.dialog('SearchHotels', [
