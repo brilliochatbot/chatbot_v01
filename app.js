@@ -262,10 +262,10 @@ bot.dialog('carregistered', [
   
   var movearoundtypeEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'movearoundtype');
   
-  if(movearoundtypeEntity)
+  //if(movearoundtypeEntity)
   
   //if (modelEntity === 'Lexus' ||  modelEntity === 'lexus')
-	{
+	//{
 		//session.send('model %s', results.response)
 		//builder.Prompts.text(session, 'While we service your car, how do you prefer to move around?\n\nLoaner Car/ Shuttle service');
 		if(results.response == "loaner car")
@@ -279,7 +279,7 @@ bot.dialog('carregistered', [
 		{
 		builder.Prompts.text(session, 'please enter valid input');
 		}
-	}
+	//}
 	/*else
 	{
 	  //user
