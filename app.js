@@ -169,10 +169,12 @@ bot.dialog('carregistered', [
 	}
   
    //session.send('Let me know your car number');
-  },
+  }
+  
+  /*,  to get user ans'r
   function(session, results) {
         session.endDialog('Car service selected %s!', results.response);
-    }
+    }*/
   ]).triggerAction({
     matches: 'carservice'
 	//onInterrupted: function (session) {
