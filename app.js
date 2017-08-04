@@ -214,15 +214,8 @@ bot.dialog('carregistered', [
   
   bot.dialog('time', [
   function(session,args,next){
-  
-  //*var typeofserviceEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'typeofservice');
-  
-  //*if(typeofserviceEntity)
-  
-  //if (modelEntity === 'Lexus' ||  modelEntity === 'lexus')
-	//session.send('model %s', results.response)
+  //session.send('model %s', results.response)
 		builder.Prompts.text(session, "Generally people go for oil change, battery check-up, general servicing during a routine service. What are your preferences?");
-		
   }
   ]).triggerAction({
     matches: 'time'
@@ -275,13 +268,13 @@ bot.dialog('carregistered', [
 	{
 		//session.send('model %s', results.response)
 		//builder.Prompts.text(session, 'While we service your car, how do you prefer to move around?\n\nLoaner Car/ Shuttle service');
-		/*if(results.response === "loaner car")
+		if(results.response == "loaner car")
 		{
 		builder.Prompts.text(session,"Your loaner car would be available by 9:05 am and needs to be returned while taking your car back./ Driver named John will pick you by 9:15 am. You can reach him at (541) 754-3010)");
-		} else if(results.response === "shuttle service")
+		} else if(results.response == "shuttle service")
 		{
 			builder.Prompts.text(session,"Driver named John will pick you by 9:15 am. You can reach him at (541) 754-3010)");
-		}*/
+		}
 	}
 	else
 	{
