@@ -141,7 +141,7 @@ bot.dialog('carregistered', [
   //session.send('Let me know your car number');
   }
   ]).triggerAction({
-    matches: 'carregistered',
+    matches: 'carregistered'
 	//onInterrupted: function (session) {
     //    session.send('Please provide a valid car number');
   });
@@ -171,7 +171,7 @@ bot.dialog('carregistered', [
    //session.send('Let me know your car number');
   }
   ]).triggerAction({
-    matches: 'carservice',
+    matches: 'carservice'
 	//onInterrupted: function (session) {
     //    session.send('Please provide a valid car number');
   });
