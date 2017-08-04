@@ -156,7 +156,7 @@ bot.dialog('carregistered', [
   
   //if (modelEntity === 'Lexus' ||  modelEntity === 'lexus')
 	{
-		session.send('model %s', results.response)
+		//session.send('model %s', results.response)
 		builder.Prompts.text(session, 'When are you planning to go for this service?');
 	}
 	else
@@ -170,6 +170,9 @@ bot.dialog('carregistered', [
   
    //session.send('Let me know your car number');
   }
+  function (session, results) {
+        session.endDialog('Car service selected %s!', results.response);
+    }
   ]).triggerAction({
     matches: 'carservice'
 	//onInterrupted: function (session) {
@@ -215,7 +218,7 @@ bot.dialog('carregistered', [
   //*if(typeofserviceEntity)
   
   //if (modelEntity === 'Lexus' ||  modelEntity === 'lexus')
-	session.send('model %s', results.response)
+	//session.send('model %s', results.response)
 		builder.Prompts.text(session, "Generally people go for oil change, battery check-up, general servicing during a routine service. What are your preferences?");
 		
   }
