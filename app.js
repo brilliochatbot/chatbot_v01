@@ -266,7 +266,8 @@ bot.dialog('carregistered', [
   
   //if (modelEntity === 'Lexus' ||  modelEntity === 'lexus')
 	{
-		session.send('you selected %s', results.response)
+		builder.Prompts.text(session, 'you are going with');
+		//session.send('you selected %s', results.response)
 		//builder.Prompts.text(session, 'While we service your car, how do you prefer to move around?\n\nLoaner Car/ Shuttle service');
 		/*if(results.response == "loaner car")
 		{
