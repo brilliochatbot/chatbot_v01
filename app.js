@@ -275,13 +275,13 @@ bot.dialog('carregistered', [
 	{
 		//session.send('model %s', results.response)
 		//builder.Prompts.text(session, 'While we service your car, how do you prefer to move around?\n\nLoaner Car/ Shuttle service');
-		if(results.response =="loaner car")
+		/*if(results.response === "loaner car")
 		{
 		builder.Prompts.text(session,"Your loaner car would be available by 9:05 am and needs to be returned while taking your car back./ Driver named John will pick you by 9:15 am. You can reach him at (541) 754-3010)");
-		} else if(results.response == "shuttle service")
+		} else if(results.response === "shuttle service")
 		{
 			builder.Prompts.text(session,"Driver named John will pick you by 9:15 am. You can reach him at (541) 754-3010)");
-		}
+		}*/
 	}
 	else
 	{
@@ -293,7 +293,7 @@ bot.dialog('carregistered', [
 	}
   
    //session.send('Let me know your car number');
-  }/*,function(session, results) 
+  },function(session, results) 
 	{
 	if(results.response =="loaner car")
 	{
@@ -302,7 +302,7 @@ bot.dialog('carregistered', [
 		{
 			builder.Prompts.text(session,"Driver named John will pick you by 9:15 am. You can reach him at (541) 754-3010)");
 		}
-	}*/
+	}
 		
     
   /*,  to get user ans
