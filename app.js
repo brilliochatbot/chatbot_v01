@@ -257,6 +257,75 @@ bot.dialog('carregistered', [
     //    session.send('Please provide a valid car number');
   });
   
+
+ bot.dialog('movearount1', [
+  function(session,args,next){
+  
+  var movearoundtypeEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'movearoundtype');
+  
+  if(movearoundtypeEntity)
+
+	{
+		//session.send('model %s', results.response)
+		builder.Prompts.text(session, 'Your loaner car would be available by 9:05 am and needs to be returned while taking your car back./ Driver named John will pick you by 9:15 am. You can reach him at (541) 754-3010)');
+	}
+	else
+	{
+	  //user
+	  //session.send('model %s', args[0])
+	  //session.send('model %s', args.intent.entities)
+	  //builder.Prompts.text(session,modelEntity);
+	builder.Prompts.text(session, 'please enter valid input');
+	}
+  
+   //session.send('Let me know your car number');
+  }
+  /*,  to get user ans
+  function(session, results) {
+        session.endDialog('Car service selected %s!', results.response);
+    }*/
+  ]).triggerAction({
+    matches: 'movearount1'
+	//onInterrupted: function (session) {
+    //    session.send('Please provide a valid car number');
+  });
+   
+   
+  bot.dialog('movearount2', [
+  function(session,args,next){
+  
+  var movearoundtypeEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'movearoundtype');
+  
+  if(movearoundtypeEntity)
+
+	{
+		//session.send('model %s', results.response)
+		builder.Prompts.text(session, 'Driver named John will pick you by 9:15 am. You can reach him at (541) 754-3010)');
+	}
+	else
+	{
+	  //user
+	  //session.send('model %s', args[0])
+	  //session.send('model %s', args.intent.entities)
+	  //builder.Prompts.text(session,modelEntity);
+	builder.Prompts.text(session, 'please enter valid input');
+	}
+  
+   //session.send('Let me know your car number');
+  }
+  /*,  to get user ans
+  function(session, results) {
+        session.endDialog('Car service selected %s!', results.response);
+    }*/
+  ]).triggerAction({
+    matches: 'movearount2'
+	//onInterrupted: function (session) {
+    //    session.send('Please provide a valid car number');
+  });
+ 
+ 
+ /*
+ 
  bot.dialog('movearound', [
   function(session,args,next){
   
@@ -310,11 +379,11 @@ bot.dialog('carregistered', [
   function(session, results) {
         session.endDialog('Car service selected %s!', results.response);
     }*/
-  ]).triggerAction({
+  /*]).triggerAction({
     matches: 'movearound'
 	//onInterrupted: function (session) {
     //    session.send('Please provide a valid car number');
-  });
+  }); */
  
   
 
