@@ -360,7 +360,7 @@ bot.dialog('carregistered', [
   
   var servicetypeEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'servicetype');
   
-  if(typeofserviceEntity)
+  if(servicetypeEntity)
   
 	{
 		//session.send('model %s', results.response)
