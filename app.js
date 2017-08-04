@@ -275,15 +275,19 @@ bot.dialog('carregistered', [
 		{
 			builder.Prompts.text(session,"Driver named John will pick you by 9:15 am. You can reach him at (541) 754-3010)");
 		}
+		else 
+		{
+		builder.Prompts.text(session, 'please enter valid input');
+		}
 	}
-	else
+	/*else
 	{
 	  //user
 	  //session.send('model %s', args[0])
 	  //session.send('model %s', args.intent.entities)
 	  //builder.Prompts.text(session,modelEntity);
 	builder.Prompts.text(session, 'please enter valid input');
-	}
+	}*/
   
    //session.send('Let me know your car number');
   }/*,function(session, results) 
