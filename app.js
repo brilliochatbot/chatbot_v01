@@ -156,13 +156,14 @@ bot.dialog('carregistered', [
   
   //if (modelEntity === 'Lexus' ||  modelEntity === 'lexus')
 	{
+		session.send('model %s', results.response)
 		builder.Prompts.text(session, 'When are you planning to go for this service?');
 	}
 	else
 	{
 	  //user
 	  //session.send('model %s', args[0])
-	  session.send('model %s', args.intent.entities)
+	  //session.send('model %s', args.intent.entities)
 	  //builder.Prompts.text(session,modelEntity);
 	builder.Prompts.text(session, 'please enter valid service type Routine/Auxiliary Service');
 	}
@@ -200,10 +201,30 @@ bot.dialog('carregistered', [
    //session.send('Let me know your car number');
   }
   ]).triggerAction({
-    matches: 'date',
+    matches: 'date'
 	//onInterrupted: function (session) {
     //    session.send('Please provide a valid car number');
   });
+  
+  
+  bot.dialog('time', [
+  function(session,args,next){
+  
+  //*var typeofserviceEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'typeofservice');
+  
+  //*if(typeofserviceEntity)
+  
+  //if (modelEntity === 'Lexus' ||  modelEntity === 'lexus')
+	session.send('model %s', results.response)
+		builder.Prompts.text(session, "Generally people go for oil change, battery check-up, general servicing during a routine service. What are your preferences?");
+		
+  }
+  ]).triggerAction({
+    matches: 'time'
+	//onInterrupted: function (session) {
+    //    session.send('Please provide a valid car number');
+  });
+  
   
 
 
