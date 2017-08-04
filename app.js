@@ -324,6 +324,67 @@ bot.dialog('carregistered', [
   });
  
  
+ 
+ bot.dialog('carservice1', [
+  function(session,args,next){
+  
+  var typeofserviceEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'typeofservice');
+  
+  if(typeofserviceEntity)
+  
+	{
+		//session.send('model %s', results.response)
+		builder.Prompts.text(session, 'Let me know what you wish to go with\n\nCar Detailing/ Buy Accessories');
+	}
+	else
+	{
+	  //user
+	  //session.send('model %s', args[0])
+	  //session.send('model %s', args.intent.entities)
+	  //builder.Prompts.text(session,modelEntity);
+	builder.Prompts.text(session, 'please enter valid input');
+	}
+  
+   //session.send('Let me know your car number');
+  }
+  
+  ]).triggerAction({
+    matches: 'carservice1'
+	//onInterrupted: function (session) {
+    //    session.send('Please provide a valid car number');
+  });
+  
+  
+  bot.dialog('cardetailing', [
+  function(session,args,next){
+  
+  var servicetypeEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'servicetype');
+  
+  if(typeofserviceEntity)
+  
+	{
+		//session.send('model %s', results.response)
+		builder.Prompts.text(session, 'When are you planning to go for this service?');
+	}
+	else
+	{
+	  //user
+	  //session.send('model %s', args[0])
+	  //session.send('model %s', args.intent.entities)
+	  //builder.Prompts.text(session,modelEntity);
+	builder.Prompts.text(session, 'please enter valid input');
+	}
+  
+   //session.send('Let me know your car number');
+  }
+  
+  ]).triggerAction({
+    matches: 'cardetailing'
+	//onInterrupted: function (session) {
+    //    session.send('Please provide a valid car number');
+  });
+ 
+ 
  /*
  
  bot.dialog('movearound', [
