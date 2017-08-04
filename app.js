@@ -384,6 +384,17 @@ bot.dialog('carregistered', [
     //    session.send('Please provide a valid car number');
   });
  
+  bot.dialog('end', [
+  function(session,args,next){
+  //session.send('model %s', results.response)
+		builder.Prompts.text(session, "Your Welcome");
+  }
+  ]).triggerAction({
+    matches: 'end'
+	//onInterrupted: function (session) {
+    //    session.send('Please provide a valid car number');
+  });
+ 
  
  /*
  
@@ -448,7 +459,7 @@ bot.dialog('carregistered', [
  
   
 
-bot.dialog('SearchHotels', [
+/*bot.dialog('SearchHotels', [
     function (session, args, next) {
         session.send('Welcome to the Hotels finder! We are analyzing your message: \'%s\'', session.message.text);
 
@@ -463,7 +474,7 @@ bot.dialog('SearchHotels', [
             // airport entity detected, continue to next step
             session.dialogData.searchType = 'airport';
             next({ response: airportEntity.entity });
-        }*/ else {
+        }*//* else {
             // no entities detected, ask user for a destination
             builder.Prompts.text(session, 'Please enter your destination');
         }
@@ -575,6 +586,7 @@ function reviewAsAttachment(review) {
  * Fetch weather details from Yahoo Weather API
  * @param loc Location to get the weather for
  */
+ /*
 function weatherForecast(loc, cb) {
   const query = new YQL('select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="' + loc + '")');
 
@@ -588,6 +600,7 @@ function weatherForecast(loc, cb) {
 /**
  * Find forecast for a specified date (if available)
  */
+ /*
 function forecastForADate(forecastDate, forecasts) {
   return forecasts.find((item) => {
     var date = moment(item.date, 'DD MMM YYYY');
@@ -596,7 +609,7 @@ function forecastForADate(forecastDate, forecasts) {
 }
 
 /** Prompts to get the current weather conditions */
-bot.dialog('Weather.GetForecast', [
+/*bot.dialog('Weather.GetForecast', [
   function(session, args, next) {
 	session.send('Welcome to the Weather finder! We are analyzing your message: \'%s\'', session.message.text);
     const location = builder.EntityRecognizer.findEntity(args.entities, 'builtin.geography.city');
@@ -630,6 +643,7 @@ bot.dialog('Weather.GetForecast', [
 
 
 /** Fetch the weather forecast for a city */
+/*
 bot.dialog('GetForecast', [
   function(session, args, next) {
     const location = builder.EntityRecognizer.findEntity(args.entities, 'builtin.geography.city');
@@ -677,4 +691,4 @@ bot.dialog('GetForecast', [
     onInterrupted: function (session) {
         session.send('Please provide a GetForecast');
     }
-});
+});*/
