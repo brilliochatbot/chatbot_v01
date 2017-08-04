@@ -169,8 +169,8 @@ bot.dialog('carregistered', [
 	}
   
    //session.send('Let me know your car number');
-  }
-  function (session, results) {
+  },
+  function(session, results) {
         session.endDialog('Car service selected %s!', results.response);
     }
   ]).triggerAction({
