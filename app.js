@@ -125,7 +125,7 @@ bot.dialog('carregistered', [
   //if (modelEntity === 'Lexus' ||  modelEntity === 'lexus')
 	{
 	//session.send('model %d', carnumberEntity);
-	session.send('model %s', carnumberEntity);
+	//session.send('model %s', carnumberEntity);
 	builder.Prompts.text(session, 'Fine. How can I help you today?');
 	}
 	else
@@ -147,6 +147,64 @@ bot.dialog('carregistered', [
   });
 
 
+  bot.dialog('carservice', [
+  function(session,args,next){
+  
+  var typeofserviceEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'typeofservice');
+  
+  if(typeofserviceEntity)
+  
+  //if (modelEntity === 'Lexus' ||  modelEntity === 'lexus')
+	{
+		builder.Prompts.text(session, 'When are you planning to go for this service?');
+	}
+	else
+	{
+	  //user
+	  //session.send('model %s', args[0])
+	  session.send('model %s', args.intent.entities)
+	  //builder.Prompts.text(session,modelEntity);
+	builder.Prompts.text(session, 'please enter valid service type Routine/Auxiliary Service');
+	}
+  
+   //session.send('Let me know your car number');
+  }
+  ]).triggerAction({
+    matches: 'carservice',
+	//onInterrupted: function (session) {
+    //    session.send('Please provide a valid car number');
+  });
+  
+  bot.dialog('date', [
+  function(session,args,next){
+  
+  //*var typeofserviceEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'typeofservice');
+  
+  //*if(typeofserviceEntity)
+  
+  //if (modelEntity === 'Lexus' ||  modelEntity === 'lexus')
+	
+		builder.Prompts.text(session, "That's great. Let me know which time do you prefer for the service?\n\n9 am / 11 am / 3 pm/ 5 pm");
+		
+		
+	
+	/*else
+	{
+	  //user
+	  //session.send('model %s', args[0])
+	  //session.send('model %s', modelEntity)
+	  //builder.Prompts.text(session,modelEntity);
+	builder.Prompts.text(session, 'please enter valid service type Routine/Auxiliary Service');
+	}*/
+  
+   //session.send('Let me know your car number');
+  }
+  ]).triggerAction({
+    matches: 'date',
+	//onInterrupted: function (session) {
+    //    session.send('Please provide a valid car number');
+  });
+  
 
 
 bot.dialog('SearchHotels', [
