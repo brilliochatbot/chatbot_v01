@@ -1,0 +1,414 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "MyBotCopy",
+  "name": "TravalAgent",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "car"
+    },
+    {
+      "name": "cardetailing"
+    },
+    {
+      "name": "carregistered"
+    },
+    {
+      "name": "carservice"
+    },
+    {
+      "name": "carservice1"
+    },
+    {
+      "name": "date"
+    },
+    {
+      "name": "end"
+    },
+    {
+      "name": "greeting"
+    },
+    {
+      "name": "help"
+    },
+    {
+      "name": "movearount1"
+    },
+    {
+      "name": "movearount2"
+    },
+    {
+      "name": "newcar"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "servicerequest"
+    },
+    {
+      "name": "time"
+    }
+  ],
+  "entities": [
+    {
+      "name": "city"
+    },
+    {
+      "name": "emotion"
+    },
+    {
+      "name": "help"
+    },
+    {
+      "name": "india"
+    },
+    {
+      "name": "Location",
+      "children": [
+        "ToLocation",
+        "FromLocation"
+      ]
+    },
+    {
+      "name": "routine"
+    },
+    {
+      "name": "Weather.Location",
+      "inherits": {
+        "domain_name": "Weather",
+        "model_name": "Location"
+      }
+    }
+  ],
+  "composites": [],
+  "closedLists": [
+    {
+      "name": "carnumber",
+      "subLists": [
+        {
+          "canonicalForm": "1234 ab",
+          "list": []
+        },
+        {
+          "canonicalForm": "1235 ab",
+          "list": []
+        },
+        {
+          "canonicalForm": "1236 ab",
+          "list": []
+        },
+        {
+          "canonicalForm": "1237 AB",
+          "list": []
+        }
+      ]
+    },
+    {
+      "name": "model",
+      "subLists": [
+        {
+          "canonicalForm": "ES Hybrid",
+          "list": []
+        },
+        {
+          "canonicalForm": "LX",
+          "list": []
+        },
+        {
+          "canonicalForm": "RC F",
+          "list": []
+        }
+      ]
+    },
+    {
+      "name": "movearoundtype",
+      "subLists": [
+        {
+          "canonicalForm": "loaner car",
+          "list": []
+        },
+        {
+          "canonicalForm": "shuttle service",
+          "list": []
+        }
+      ]
+    },
+    {
+      "name": "servicetype",
+      "subLists": [
+        {
+          "canonicalForm": "all of them",
+          "list": []
+        },
+        {
+          "canonicalForm": "oil change",
+          "list": []
+        },
+        {
+          "canonicalForm": "battery check-up",
+          "list": []
+        },
+        {
+          "canonicalForm": "car detailing",
+          "list": []
+        },
+        {
+          "canonicalForm": "buy accessories",
+          "list": []
+        }
+      ]
+    },
+    {
+      "name": "typeofservice",
+      "subLists": [
+        {
+          "canonicalForm": "routine service",
+          "list": []
+        },
+        {
+          "canonicalForm": "auxiliary service",
+          "list": []
+        }
+      ]
+    }
+  ],
+  "bing_entities": [
+    "age",
+    "datetimeV2",
+    "dimension",
+    "email",
+    "encyclopedia",
+    "geography",
+    "money",
+    "number",
+    "ordinal",
+    "percentage",
+    "phonenumber",
+    "temperature",
+    "url"
+  ],
+  "actions": [],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "hello",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "thank you",
+      "intent": "end",
+      "entities": []
+    },
+    {
+      "text": "hey",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "help me",
+      "intent": "help",
+      "entities": [
+        {
+          "entity": "help",
+          "startPos": 0,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "9 am",
+      "intent": "time",
+      "entities": []
+    },
+    {
+      "text": "thank you for helping",
+      "intent": "end",
+      "entities": []
+    },
+    {
+      "text": "ok thanks",
+      "intent": "end",
+      "entities": []
+    },
+    {
+      "text": "thank u",
+      "intent": "end",
+      "entities": []
+    },
+    {
+      "text": "all of them",
+      "intent": "servicerequest",
+      "entities": []
+    },
+    {
+      "text": "oil change",
+      "intent": "servicerequest",
+      "entities": []
+    },
+    {
+      "text": "thank you for the help",
+      "intent": "end",
+      "entities": []
+    },
+    {
+      "text": "hi how r u",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "3rd feb",
+      "intent": "date",
+      "entities": []
+    },
+    {
+      "text": "lexus lx",
+      "intent": "car",
+      "entities": []
+    },
+    {
+      "text": "need help in using",
+      "intent": "help",
+      "entities": [
+        {
+          "entity": "help",
+          "startPos": 5,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "lexus es hybrid",
+      "intent": "car",
+      "entities": []
+    },
+    {
+      "text": "lexus rc f",
+      "intent": "car",
+      "entities": []
+    },
+    {
+      "text": "car no. 1234 ab",
+      "intent": "carregistered",
+      "entities": []
+    },
+    {
+      "text": "car no. 1235 ab",
+      "intent": "carregistered",
+      "entities": []
+    },
+    {
+      "text": "routine service",
+      "intent": "carservice",
+      "entities": []
+    },
+    {
+      "text": "auxiliary services",
+      "intent": "carservice1",
+      "entities": []
+    },
+    {
+      "text": "battery check-up",
+      "intent": "servicerequest",
+      "entities": []
+    },
+    {
+      "text": "buy accessories",
+      "intent": "servicerequest",
+      "entities": []
+    },
+    {
+      "text": "car detailing",
+      "intent": "servicerequest",
+      "entities": []
+    },
+    {
+      "text": "5th aug",
+      "intent": "date",
+      "entities": []
+    },
+    {
+      "text": "routine services",
+      "intent": "carservice",
+      "entities": []
+    },
+    {
+      "text": "need all of them",
+      "intent": "servicerequest",
+      "entities": []
+    },
+    {
+      "text": "no 5th august",
+      "intent": "date",
+      "entities": []
+    },
+    {
+      "text": "i wish to go with loaner car",
+      "intent": "movearount1",
+      "entities": []
+    },
+    {
+      "text": "going with loaner car",
+      "intent": "movearount1",
+      "entities": []
+    },
+    {
+      "text": "wish to go with shuttle service",
+      "intent": "movearount2",
+      "entities": []
+    },
+    {
+      "text": "going with shuttle service",
+      "intent": "movearount2",
+      "entities": []
+    },
+    {
+      "text": "need to go with auxiliary services",
+      "intent": "carservice1",
+      "entities": []
+    },
+    {
+      "text": "need to go with car detailing",
+      "intent": "cardetailing",
+      "entities": []
+    },
+    {
+      "text": "i wish to go for routine service",
+      "intent": "carservice",
+      "entities": []
+    },
+    {
+      "text": "need to go for oil change",
+      "intent": "servicerequest",
+      "entities": []
+    },
+    {
+      "text": "going for battery check-up",
+      "intent": "servicerequest",
+      "entities": []
+    },
+    {
+      "text": "need to go with oil change",
+      "intent": "servicerequest",
+      "entities": []
+    },
+    {
+      "text": "car no. 1237 ab",
+      "intent": "carregistered",
+      "entities": []
+    },
+    {
+      "text": "car no. 1236 ab",
+      "intent": "carregistered",
+      "entities": []
+    }
+  ]
+}
