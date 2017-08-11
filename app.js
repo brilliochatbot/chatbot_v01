@@ -2,6 +2,7 @@ var restify = require('restify');
 var YQL     = require('yql');
 var builder = require('botbuilder');
 
+var count1;
 // Setup Restify Server
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function () {
@@ -105,7 +106,7 @@ bot.dialog('greeting', [
 	  //builder.Prompts.text(session,modelEntity);
 	builder.Prompts.text(session, 'please enter valid input');
 	}
-    
+   count1=1; 
   //session.send('Let me know your car number');
   }
   ]).triggerAction({
@@ -115,7 +116,63 @@ bot.dialog('greeting', [
 
 bot.dialog('None', [
   function(session,args,next){
-  session.send('Please enter valid Input');
+  if(count1===1)
+	{
+	session.send('I am not trained to answer \'%s\' \n\nPlease help me by giving questions related to Lexus car Service / Weather \n\nLet me know your car number ', session.message.text);
+	//session.send('Let me know your car number');
+	}
+	else if(count1===2)
+	{
+	session.send('I am not trained to answer \'%s\' \n\nPlease help me by giving questions related to Lexus car Service / Weather\n\nLet me know your car number ', session.message.text);
+	//session.send('Let me know your car number')
+	//session.send('How can I help you today?')
+	}
+	else if(count1===3)
+	{
+	session.send('I am not trained to answer \'%s\' \n\nPlease help me by giving questions related to Lexus car Service / Weather \n\nHow can I help you today?', session.message.text);
+	//session.send('How can I help you today?')
+	//session.send('Let me know what kind of service you like to go with Routine Service / Auxiliary service')
+	}
+	else if(count1===4)
+	{
+	session.send('I am not trained to answer \'%s\' \n\nPlease help me by giving questions related to Lexus car Service / Weather\n\nLet me know what kind of service you like to go with Routine Service / Auxiliary service ', session.message.text);
+	//session.send('Let me know what kind of service you like to go with Routine Service / Auxiliary service')
+	//session.send('When are you planning to go for this service?')
+	}
+	else if(count1===5)
+	{
+	session.send('I am not trained to answer \'%s\' \n\nPlease help me by giving questions related to Lexus car Service / Weather \n\nWhen are you planning to go for this service?', session.message.text);
+	//session.send('When are you planning to go for this service?');
+	//session.send('Let me know which time do you prefer for the service?\n\n9 am / 11 am / 3 pm/ 5 pm')
+	}
+	else if(count1===6)
+	{
+	session.send('I am not trained to answer \'%s\' \n\nPlease help me by giving questions related to Lexus car Service / Weather \n\nLet me know which time do you prefer for the service?\n\n9 am / 11 am / 3 pm/ 5 pm', session.message.text);
+	//session.send('Let me know which time do you prefer for the service?\n\n9 am / 11 am / 3 pm/ 5 pm')
+	//session.send('Generally people go for oil change, battery check-up, general servicing during a routine service. What are your preferences?')
+	}
+	else if(count1===7)
+	{
+	session.send('I am not trained to answer \'%s\' \n\nPlease help me by giving questions related to Lexus car Service / Weather \n\nGenerally people go for oil change, battery check-up, general servicing during a routine service. What are your preferences?', session.message.text);
+	//session.send('Generally people go for oil change, battery check-up, general servicing during a routine service. What are your preferences?')
+	//session.send('how do you prefer to move around?\n\nLoaner Car/ Shuttle service')
+	}
+	else if(count1===8)
+	{
+	session.send('I am not trained to answer \'%s\' \n\nPlease help me by giving questions related to Lexus car Service / Weather \n\nhow do you prefer to move around?\n\nLoaner Car/ Shuttle service', session.message.text);
+	//session.send('how do you prefer to move around?\n\nLoaner Car/ Shuttle service')
+	//session.send('Your loaner car would be available by 9:05 am and needs to be returned while taking your car back./ Driver named John will pick you by 9:15 am. You can reach him at (541) 754-3010)')
+	}
+	else if(count1===11)
+	{
+	session.send('I am not trained to answer \'%s\' \n\nPlease help me by giving questions related to Lexus car Service / Weather \n\nLet me know what you wish to go with\n\nCar Detailing/ Buy Accessories', session.message.text);
+	//session.send('Let me know what you wish to go with\n\nCar Detailing/ Buy Accessories')
+	}
+	
+	else{
+    session.send('I am not trained to answer \'%s\' \n\nPlease help me by giving questions related to Lexus car Service / Weather ', session.message.text);
+	//session.send('Let me know what kind of service you like to go with Routine Service / Auxiliary service');
+	}
   }
   ]).triggerAction({
     matches: 'None'
@@ -144,7 +201,7 @@ bot.dialog('service', [
 	  //builder.Prompts.text(session,modelEntity);
 	//builder.Prompts.text(session, 'please enter Lexus ES Hybrid/ Lexus LX/ Lexus RC F');
 	//}
-  
+  count1=4;
   
   //session.send('Let me know your car number');
   }
@@ -173,7 +230,7 @@ bot.dialog('car', [
 	builder.Prompts.text(session, 'please enter Lexus ES Hybrid/ Lexus LX/ Lexus RC F');
 	}
   
-  
+   count1=2; 
   //session.send('Let me know your car number');
   }
   ]).triggerAction({
@@ -202,7 +259,7 @@ bot.dialog('carregistered', [
 	  //builder.Prompts.text(session,modelEntity);
 	builder.Prompts.text(session, 'please enter valid car number');
 	}
-  
+	count1=3;
   
   //session.send('Let me know your car number');
   }
@@ -235,6 +292,7 @@ bot.dialog('carregistered', [
 	}
   
    //session.send('Let me know your car number');
+   count1=5;
   }
   
   /*,  to get user ans
@@ -270,6 +328,7 @@ bot.dialog('carregistered', [
 	}*/
   
    //session.send('Let me know your car number');
+   count1=6;
   }
   ]).triggerAction({
     matches: 'date'
@@ -282,6 +341,7 @@ bot.dialog('carregistered', [
   function(session,args,next){
   //session.send('model %s', results.response)
 		builder.Prompts.text(session, "Generally people go for oil change, battery check-up, general servicing during a routine service. What are your preferences?");
+		count1=7;
   }
   ]).triggerAction({
     matches: 'time'
@@ -310,7 +370,7 @@ bot.dialog('carregistered', [
 	  //builder.Prompts.text(session,modelEntity);
 	builder.Prompts.text(session, 'please enter valid input');
 	}
-  
+  count1=8;
    //session.send('Let me know your car number');
   }
   /*,  to get user ans
@@ -343,7 +403,7 @@ bot.dialog('carregistered', [
 	  //builder.Prompts.text(session,modelEntity);
 	builder.Prompts.text(session, 'please enter valid input');
 	}
-  
+  count1=9;
    //session.send('Let me know your car number');
   }
   /*,  to get user ans
@@ -376,7 +436,7 @@ bot.dialog('carregistered', [
 	  //builder.Prompts.text(session,modelEntity);
 	builder.Prompts.text(session, 'please enter valid input');
 	}
-  
+  count1=10;
    //session.send('Let me know your car number');
   }
   /*,  to get user ans
@@ -410,7 +470,7 @@ bot.dialog('carregistered', [
 	  //builder.Prompts.text(session,modelEntity);
 	builder.Prompts.text(session, 'please enter valid input');
 	}
-  
+  count1=11;
    //session.send('Let me know your car number');
   }
   
@@ -440,7 +500,7 @@ bot.dialog('carregistered', [
 	  //builder.Prompts.text(session,modelEntity);
 	builder.Prompts.text(session, 'please enter valid input');
 	}
-  
+  count1=12;
    //session.send('Let me know your car number');
   }
   
@@ -652,7 +712,7 @@ function reviewAsAttachment(review) {
  * Fetch weather details from Yahoo Weather API
  * @param loc Location to get the weather for
  */
- /*
+ 
 function weatherForecast(loc, cb) {
   const query = new YQL('select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="' + loc + '")');
 
@@ -666,7 +726,7 @@ function weatherForecast(loc, cb) {
 /**
  * Find forecast for a specified date (if available)
  */
- /*
+
 function forecastForADate(forecastDate, forecasts) {
   return forecasts.find((item) => {
     var date = moment(item.date, 'DD MMM YYYY');
@@ -675,7 +735,7 @@ function forecastForADate(forecastDate, forecasts) {
 }
 
 /** Prompts to get the current weather conditions */
-/*bot.dialog('Weather.GetForecast', [
+bot.dialog('Weather.GetForecast', [
   function(session, args, next) {
 	session.send('Welcome to the Weather finder! We are analyzing your message: \'%s\'', session.message.text);
     const location = builder.EntityRecognizer.findEntity(args.entities, 'builtin.geography.city');
@@ -696,20 +756,20 @@ function forecastForADate(forecastDate, forecasts) {
       session.send(res.text + ' with a temperature of ' + res.temp + ' degress');
     });
   } /////////////////////////////
-]).triggerAction({
+/*]).triggerAction({
     matches: 'Weather.GetForecast'
  });
-
-/*]).triggerAction({
+*/
+]).triggerAction({
     matches: 'Weather.GetForecast',
     onInterrupted: function (session) {
         session.send('Please provide a weather destination');
     }
-});*/
+});
 
 
 /** Fetch the weather forecast for a city */
-/*
+
 bot.dialog('GetForecast', [
   function(session, args, next) {
     const location = builder.EntityRecognizer.findEntity(args.entities, 'builtin.geography.city');
@@ -753,8 +813,8 @@ bot.dialog('GetForecast', [
     });
   }
 ]).triggerAction({
-    matches: 'GetForecast',
-    onInterrupted: function (session) {
-        session.send('Please provide a GetForecast');
-    }
-});*/
+    matches: 'GetForecast'//,
+    //onInterrupted: function (session) {
+    //session.send('Please provide a GetForecast');
+    //}
+});
