@@ -27,6 +27,34 @@
       "name": "end"
     },
     {
+      "name": "Fitness.AddNote",
+      "inherits": {
+        "domain_name": "Fitness",
+        "model_name": "AddNote"
+      }
+    },
+    {
+      "name": "Fitness.GetRemaining",
+      "inherits": {
+        "domain_name": "Fitness",
+        "model_name": "GetRemaining"
+      }
+    },
+    {
+      "name": "Fitness.LogActivity",
+      "inherits": {
+        "domain_name": "Fitness",
+        "model_name": "LogActivity"
+      }
+    },
+    {
+      "name": "Fitness.LogWeight",
+      "inherits": {
+        "domain_name": "Fitness",
+        "model_name": "LogWeight"
+      }
+    },
+    {
       "name": "greeting"
     },
     {
@@ -49,6 +77,13 @@
     },
     {
       "name": "time"
+    },
+    {
+      "name": "Weather.GetForecast",
+      "inherits": {
+        "domain_name": "Weather",
+        "model_name": "GetForecast"
+      }
     }
   ],
   "entities": [
@@ -57,6 +92,48 @@
     },
     {
       "name": "emotion"
+    },
+    {
+      "name": "Fitness.ActivityType",
+      "inherits": {
+        "domain_name": "Fitness",
+        "model_name": "ActivityType"
+      }
+    },
+    {
+      "name": "Fitness.Food",
+      "inherits": {
+        "domain_name": "Fitness",
+        "model_name": "Food"
+      }
+    },
+    {
+      "name": "Fitness.MealType",
+      "inherits": {
+        "domain_name": "Fitness",
+        "model_name": "MealType"
+      }
+    },
+    {
+      "name": "Fitness.Measurement",
+      "inherits": {
+        "domain_name": "Fitness",
+        "model_name": "Measurement"
+      }
+    },
+    {
+      "name": "Fitness.Number",
+      "inherits": {
+        "domain_name": "Fitness",
+        "model_name": "Number"
+      }
+    },
+    {
+      "name": "Fitness.StatType",
+      "inherits": {
+        "domain_name": "Fitness",
+        "model_name": "StatType"
+      }
     },
     {
       "name": "help"
@@ -251,6 +328,11 @@
       ]
     },
     {
+      "text": "tomorrow",
+      "intent": "date",
+      "entities": []
+    },
+    {
       "text": "9 am",
       "intent": "time",
       "entities": []
@@ -266,8 +348,18 @@
       "entities": []
     },
     {
+      "text": "today",
+      "intent": "date",
+      "entities": []
+    },
+    {
       "text": "thank you for helping",
       "intent": "end",
+      "entities": []
+    },
+    {
+      "text": "will it snow today",
+      "intent": "Weather.GetForecast",
       "entities": []
     },
     {
@@ -296,6 +388,11 @@
       "entities": []
     },
     {
+      "text": "will it rain this weekend",
+      "intent": "Weather.GetForecast",
+      "entities": []
+    },
+    {
       "text": "all of them",
       "intent": "servicerequest",
       "entities": []
@@ -316,14 +413,1004 @@
       "entities": []
     },
     {
+      "text": "i went to the gym today",
+      "intent": "Fitness.LogActivity",
+      "entities": []
+    },
+    {
       "text": "3rd feb",
       "intent": "date",
       "entities": []
     },
     {
+      "text": "how many fitbit pushups should i do tomorrow ?",
+      "intent": "Fitness.GetRemaining",
+      "entities": [
+        {
+          "entity": "Fitness.ActivityType",
+          "startPos": 16,
+          "endPos": 22
+        }
+      ]
+    },
+    {
       "text": "lexus lx",
       "intent": "car",
       "entities": []
+    },
+    {
+      "text": "log exercise notes please",
+      "intent": "Fitness.AddNote",
+      "entities": [
+        {
+          "entity": "Fitness.ActivityType",
+          "startPos": 4,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "Please record exercise notes",
+      "intent": "Fitness.AddNote",
+      "entities": [
+        {
+          "entity": "Fitness.ActivityType",
+          "startPos": 14,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "Start recording my exercise notes",
+      "intent": "Fitness.AddNote",
+      "entities": [
+        {
+          "entity": "Fitness.ActivityType",
+          "startPos": 19,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "Please record my pushups in a note",
+      "intent": "Fitness.AddNote",
+      "entities": [
+        {
+          "entity": "Fitness.ActivityType",
+          "startPos": 17,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "I want to record the workout notes",
+      "intent": "Fitness.AddNote",
+      "entities": [
+        {
+          "entity": "Fitness.ActivityType",
+          "startPos": 21,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "Display the remaining kilometers to reach 15 kilometers run",
+      "intent": "Fitness.GetRemaining",
+      "entities": []
+    },
+    {
+      "text": "Can you tell me how many kilometers to run in order to reach 20 kilometers running",
+      "intent": "Fitness.GetRemaining",
+      "entities": []
+    },
+    {
+      "text": "add to fitbit diary",
+      "intent": "Fitness.LogActivity",
+      "entities": []
+    },
+    {
+      "text": "Record that i had a nutella roll for lunch",
+      "intent": "Fitness.LogActivity",
+      "entities": [
+        {
+          "entity": "Fitness.Food",
+          "startPos": 20,
+          "endPos": 31
+        },
+        {
+          "entity": "Fitness.MealType",
+          "startPos": 37,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "Can you please record situps",
+      "intent": "Fitness.LogActivity",
+      "entities": [
+        {
+          "entity": "Fitness.ActivityType",
+          "startPos": 22,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "log strength please",
+      "intent": "Fitness.LogActivity",
+      "entities": [
+        {
+          "entity": "Fitness.ActivityType",
+          "startPos": 4,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "Please record cardio",
+      "intent": "Fitness.LogActivity",
+      "entities": [
+        {
+          "entity": "Fitness.ActivityType",
+          "startPos": 14,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "Please record from now",
+      "intent": "Fitness.LogActivity",
+      "entities": []
+    },
+    {
+      "text": "can you add to fitbit",
+      "intent": "Fitness.LogActivity",
+      "entities": []
+    },
+    {
+      "text": "record mileage for me please",
+      "intent": "Fitness.LogActivity",
+      "entities": [
+        {
+          "entity": "Fitness.Measurement",
+          "startPos": 7,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "log situps please",
+      "intent": "Fitness.LogActivity",
+      "entities": [
+        {
+          "entity": "Fitness.ActivityType",
+          "startPos": 4,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "add daily weight into fitbit",
+      "intent": "Fitness.LogWeight",
+      "entities": [
+        {
+          "entity": "Fitness.Measurement",
+          "startPos": 10,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "log weight please",
+      "intent": "Fitness.LogWeight",
+      "entities": [
+        {
+          "entity": "Fitness.Measurement",
+          "startPos": 4,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "record how heavy I am",
+      "intent": "Fitness.LogWeight",
+      "entities": []
+    },
+    {
+      "text": "Save that I weigh 145 today",
+      "intent": "Fitness.LogWeight",
+      "entities": [
+        {
+          "entity": "Fitness.Number",
+          "startPos": 18,
+          "endPos": 20
+        },
+        {
+          "entity": "Fitness.Measurement",
+          "startPos": 12,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "Record my weight yesterday was 11 stone",
+      "intent": "Fitness.LogWeight",
+      "entities": [
+        {
+          "entity": "Fitness.Number",
+          "startPos": 31,
+          "endPos": 38
+        },
+        {
+          "entity": "Fitness.Measurement",
+          "startPos": 10,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "enter weight 185 at fitbit",
+      "intent": "Fitness.LogWeight",
+      "entities": [
+        {
+          "entity": "Fitness.Number",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "Fitness.Measurement",
+          "startPos": 6,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "record weight for me please",
+      "intent": "Fitness.LogWeight",
+      "entities": [
+        {
+          "entity": "Fitness.Measurement",
+          "startPos": 7,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "Add weight please",
+      "intent": "Fitness.LogWeight",
+      "entities": [
+        {
+          "entity": "Fitness.Measurement",
+          "startPos": 4,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "Please record weight",
+      "intent": "Fitness.LogWeight",
+      "entities": [
+        {
+          "entity": "Fitness.Measurement",
+          "startPos": 14,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "update weight please",
+      "intent": "Fitness.LogWeight",
+      "entities": [
+        {
+          "entity": "Fitness.Measurement",
+          "startPos": 7,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "Please record cardio for me",
+      "intent": "Fitness.LogActivity",
+      "entities": [
+        {
+          "entity": "Fitness.ActivityType",
+          "startPos": 14,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "I have to tell you that I eat a chocolate bar of 500 Kcal",
+      "intent": "Fitness.LogActivity",
+      "entities": [
+        {
+          "entity": "Fitness.Food",
+          "startPos": 32,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "record that I will not take my dinner today",
+      "intent": "Fitness.AddNote",
+      "entities": [
+        {
+          "entity": "Fitness.MealType",
+          "startPos": 31,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "Can you record weight please",
+      "intent": "Fitness.LogWeight",
+      "entities": [
+        {
+          "entity": "Fitness.Measurement",
+          "startPos": 15,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "record weight 172 lbs please",
+      "intent": "Fitness.LogWeight",
+      "entities": [
+        {
+          "entity": "Fitness.Number",
+          "startPos": 14,
+          "endPos": 20
+        },
+        {
+          "entity": "Fitness.Measurement",
+          "startPos": 7,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "i now weigh 162 pounds record that please",
+      "intent": "Fitness.LogWeight",
+      "entities": [
+        {
+          "entity": "Fitness.Number",
+          "startPos": 12,
+          "endPos": 21
+        },
+        {
+          "entity": "Fitness.Measurement",
+          "startPos": 6,
+          "endPos": 10
+        }
+      ]
+    },
+    {
+      "text": "Get the forcast for me",
+      "intent": "Weather.GetForecast",
+      "entities": []
+    },
+    {
+      "text": "What is the weather in redmond ?",
+      "intent": "Weather.GetForecast",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 23,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "forecast in celcius",
+      "intent": "Weather.GetForecast",
+      "entities": []
+    },
+    {
+      "text": "Provide me by toronto weather please",
+      "intent": "Weather.GetForecast",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 14,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "will it be raining in ranchi",
+      "intent": "Weather.GetForecast",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 22,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "Show me the forecast at alabama",
+      "intent": "Weather.GetForecast",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 24,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "soliciting today ' s weather",
+      "intent": "Weather.GetForecast",
+      "entities": []
+    },
+    {
+      "text": "\" I need to know the temperature at bangor , sme  \"",
+      "intent": "Weather.GetForecast",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 36,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "Let ' s log the exercise notes",
+      "intent": "Fitness.AddNote",
+      "entities": [
+        {
+          "entity": "Fitness.ActivityType",
+          "startPos": 16,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "Record my strength notes please",
+      "intent": "Fitness.AddNote",
+      "entities": [
+        {
+          "entity": "Fitness.ActivityType",
+          "startPos": 10,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "Can you track my weight via a note ?",
+      "intent": "Fitness.AddNote",
+      "entities": []
+    },
+    {
+      "text": "Log my weight in a note please",
+      "intent": "Fitness.AddNote",
+      "entities": [
+        {
+          "entity": "Fitness.Measurement",
+          "startPos": 7,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "Show me the remaining minutes of running to reach today ' s target",
+      "intent": "Fitness.GetRemaining",
+      "entities": [
+        {
+          "entity": "Fitness.ActivityType",
+          "startPos": 33,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "how many steps until i hit my fitbit goal ?",
+      "intent": "Fitness.GetRemaining",
+      "entities": [
+        {
+          "entity": "Fitness.StatType",
+          "startPos": 9,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "Tell me how many pushups to reach my target ?",
+      "intent": "Fitness.GetRemaining",
+      "entities": [
+        {
+          "entity": "Fitness.ActivityType",
+          "startPos": 17,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "Can you get how much weight I should loss to reach the ideal weight ?",
+      "intent": "Fitness.GetRemaining",
+      "entities": []
+    },
+    {
+      "text": "Please display the remaining number of pushups to hit Mike ' s record",
+      "intent": "Fitness.GetRemaining",
+      "entities": []
+    },
+    {
+      "text": "Let me know how many kilograms to loss to be in the ideal weight ?",
+      "intent": "Fitness.GetRemaining",
+      "entities": []
+    },
+    {
+      "text": "can you show me the remaining number of steps to hit my last record ?",
+      "intent": "Fitness.GetRemaining",
+      "entities": []
+    },
+    {
+      "text": "Record that i worked out this morning .",
+      "intent": "Fitness.LogActivity",
+      "entities": [
+        {
+          "entity": "Fitness.ActivityType",
+          "startPos": 14,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "Is there a problem in eating 2 bananas before running ?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Fitness.ActivityType",
+          "startPos": 46,
+          "endPos": 52
+        },
+        {
+          "entity": "Fitness.Food",
+          "startPos": 31,
+          "endPos": 37
+        },
+        {
+          "entity": "Fitness.Number",
+          "startPos": 29,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "Take a note of my pushups in the next hour",
+      "intent": "Fitness.AddNote",
+      "entities": [
+        {
+          "entity": "Fitness.ActivityType",
+          "startPos": 18,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "Help me in logging today ' s pushups notes",
+      "intent": "Fitness.AddNote",
+      "entities": [
+        {
+          "entity": "Fitness.ActivityType",
+          "startPos": 29,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "Can you please record situps ?",
+      "intent": "Fitness.LogActivity",
+      "entities": [
+        {
+          "entity": "Fitness.ActivityType",
+          "startPos": 22,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "Tell me what kind of food I should eat ?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Fitness.Food",
+          "startPos": 21,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "Can I eat chocolates today ?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Fitness.Food",
+          "startPos": 10,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "Please help me in calculating the calories in one cheese burger",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Fitness.Food",
+          "startPos": 50,
+          "endPos": 62
+        }
+      ]
+    },
+    {
+      "text": "Display the number of calories in 100 grams of pasta",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Fitness.Food",
+          "startPos": 47,
+          "endPos": 51
+        },
+        {
+          "entity": "Fitness.Number",
+          "startPos": 34,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "Can you tell me if it is okay to eat some chips after the workout ?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Fitness.Food",
+          "startPos": 42,
+          "endPos": 46
+        }
+      ]
+    },
+    {
+      "text": "How many minutes to run to burn calories in a one big fries",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Fitness.Food",
+          "startPos": 54,
+          "endPos": 58
+        },
+        {
+          "entity": "Fitness.Number",
+          "startPos": 46,
+          "endPos": 48
+        }
+      ]
+    },
+    {
+      "text": "Show me a list of healthy food items to eat ?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Fitness.Food",
+          "startPos": 26,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "\" It ' s dinner time , sis it okay to eat only one apple ?  \"",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Fitness.Food",
+          "startPos": 51,
+          "endPos": 55
+        },
+        {
+          "entity": "Fitness.Number",
+          "startPos": 47,
+          "endPos": 49
+        },
+        {
+          "entity": "Fitness.MealType",
+          "startPos": 9,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "What shall I eat today for lunch ?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Fitness.MealType",
+          "startPos": 27,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "Display the number of calories to eat in breakfast",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Fitness.MealType",
+          "startPos": 41,
+          "endPos": 49
+        }
+      ]
+    },
+    {
+      "text": "show me your suggested menu for lunch",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Fitness.MealType",
+          "startPos": 32,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "Can you tell me how many calories I should take for dinner ?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Fitness.MealType",
+          "startPos": 52,
+          "endPos": 57
+        }
+      ]
+    },
+    {
+      "text": "How many calories for lunch please ?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Fitness.MealType",
+          "startPos": 22,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "Any suggestions for what to eat for dinner ?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Fitness.MealType",
+          "startPos": 36,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "Can you record that I skipped today ' s breakfast ?",
+      "intent": "Fitness.AddNote",
+      "entities": [
+        {
+          "entity": "Fitness.MealType",
+          "startPos": 40,
+          "endPos": 48
+        }
+      ]
+    },
+    {
+      "text": "Open fitbit and log weight entry",
+      "intent": "Fitness.LogWeight",
+      "entities": [
+        {
+          "entity": "Fitness.Measurement",
+          "startPos": 20,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "log weight 253 . 5 please",
+      "intent": "Fitness.LogWeight",
+      "entities": [
+        {
+          "entity": "Fitness.Number",
+          "startPos": 11,
+          "endPos": 17
+        },
+        {
+          "entity": "Fitness.Measurement",
+          "startPos": 4,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "If you please record weight 158",
+      "intent": "Fitness.LogWeight",
+      "entities": [
+        {
+          "entity": "Fitness.Measurement",
+          "startPos": 21,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "record weight 145 pounds please",
+      "intent": "Fitness.LogWeight",
+      "entities": [
+        {
+          "entity": "Fitness.Measurement",
+          "startPos": 7,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "please record today ' s weight",
+      "intent": "Fitness.LogWeight",
+      "entities": [
+        {
+          "entity": "Fitness.Measurement",
+          "startPos": 24,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "Can you record weight please ?",
+      "intent": "Fitness.LogWeight",
+      "entities": [
+        {
+          "entity": "Fitness.Measurement",
+          "startPos": 15,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "Record weight is 160 pounds please .",
+      "intent": "Fitness.LogWeight",
+      "entities": [
+        {
+          "entity": "Fitness.Number",
+          "startPos": 17,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "Record weight today is 169 pounds please",
+      "intent": "Fitness.LogWeight",
+      "entities": [
+        {
+          "entity": "Fitness.Number",
+          "startPos": 23,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "Display the steps to walk in order to burn 200 calories",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Fitness.StatType",
+          "startPos": 12,
+          "endPos": 16
+        },
+        {
+          "entity": "Fitness.Number",
+          "startPos": 43,
+          "endPos": 54
+        }
+      ]
+    },
+    {
+      "text": "show me the number of my steps in a 500 meter walk",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Fitness.StatType",
+          "startPos": 25,
+          "endPos": 29
+        },
+        {
+          "entity": "Fitness.Number",
+          "startPos": 36,
+          "endPos": 44
+        }
+      ]
+    },
+    {
+      "text": "\" Set my next goal 15 , 000 steps per day  \"",
+      "intent": "Fitness.AddNote",
+      "entities": [
+        {
+          "entity": "Fitness.StatType",
+          "startPos": 28,
+          "endPos": 32
+        },
+        {
+          "entity": "Fitness.Number",
+          "startPos": 19,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "\" Record that I ran today 12 , 300 steps  \"",
+      "intent": "Fitness.LogActivity",
+      "entities": [
+        {
+          "entity": "Fitness.StatType",
+          "startPos": 35,
+          "endPos": 39
+        },
+        {
+          "entity": "Fitness.Number",
+          "startPos": 26,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "\" let ' s run today 20 , 000 steps and burn more calories  \"",
+      "intent": "Fitness.AddNote",
+      "entities": [
+        {
+          "entity": "Fitness.StatType",
+          "startPos": 29,
+          "endPos": 33
+        },
+        {
+          "entity": "Fitness.Number",
+          "startPos": 20,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "can you show the number of steps I should run to hit my last record ?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Fitness.StatType",
+          "startPos": 27,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "Let me know the number of steps I walked today",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Fitness.StatType",
+          "startPos": 26,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "how many steps in one kilometer run ?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Fitness.StatType",
+          "startPos": 9,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "Can you tell me how many steps I should run to hit my last record ?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Fitness.StatType",
+          "startPos": 25,
+          "endPos": 29
+        }
+      ]
     },
     {
       "text": "need help in using",
@@ -473,6 +1560,11 @@
     },
     {
       "text": "i want to go for a service",
+      "intent": "service",
+      "entities": []
+    },
+    {
+      "text": "need to go for car service",
       "intent": "service",
       "entities": []
     }
